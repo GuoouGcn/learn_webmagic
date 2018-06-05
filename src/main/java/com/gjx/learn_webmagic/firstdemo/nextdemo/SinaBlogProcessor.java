@@ -22,8 +22,8 @@ public class SinaBlogProcessor implements PageProcessor {
             .me()
             .setDomain("blog.sina.com.cn")
             .setSleepTime(3000)
-            .setUserAgent(
-                    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.65 Safari/537.31");
+            .setUserAgent("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/537.31 (KHTML, like Gecko)"
+                    + " Chrome/26.0.1410.65 Safari/537.31");
 
     @Override
     public void process(Page page) {
@@ -45,7 +45,8 @@ public class SinaBlogProcessor implements PageProcessor {
     }
 
     public static void main(String[] args) {
-        Spider.create(new SinaBlogProcessor()).addUrl("http://blog.sina.com.cn/s/articlelist_1487828712_0_1.html")
+        Spider.create(new SinaBlogProcessor())
+                .addUrl("http://blog.sina.com.cn/s/articlelist_1487828712_0_1.html")
                 .run();
     }
 }
